@@ -10,7 +10,7 @@ export default function useFetchCharacters() {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    const fetchUsers = async () => {
+    const fetchCharacters = async () => {
       try {
         const response = await getCharacters();
         setIsLoaded(true);
@@ -20,7 +20,7 @@ export default function useFetchCharacters() {
         setError(error);
       }
     };
-    fetchUsers();
+    fetchCharacters();
   }, []);
 
   return { characters, error, isLoaded };
