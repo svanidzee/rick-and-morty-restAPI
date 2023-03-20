@@ -1,6 +1,11 @@
 import React from 'react';
 import { Global } from '@emotion/react';
 
+export const colors = {
+  background: '#ffffff',
+  text: '#333333',
+};
+
 const breakpoints = [480, 768, 992, 1200];
 export const mq = breakpoints.map((bp) => `@media (min-width: ${bp}px)`);
 
@@ -25,6 +30,8 @@ export const GlobalStyles = () => (
         display: 'flex',
         flexDirection: 'column',
         minHeight: '100%',
+        backgroundColor: colors.background,
+        color: colors.text,
       },
       '*': {
         boxSizing: 'border-box',

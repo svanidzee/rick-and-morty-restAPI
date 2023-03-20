@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
+
 import { Layout, QueryResult } from '../components/Layout';
+import Card from '../components/Card';
 
 export default function Characters() {
   const [characters, setCharacters] = React.useState([]);
@@ -28,9 +30,7 @@ export default function Characters() {
     <Layout grid>
       <QueryResult error={error} loading={isLoaded} data={characters}>
         {characters?.map((char) => (
-          <ul>
-            <li>{char.name}</li>
-          </ul>
+          <Card key={char.id} character={char} />
         ))}
       </QueryResult>
     </Layout>
