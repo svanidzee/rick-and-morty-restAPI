@@ -8,12 +8,14 @@ export default function useFetchCharacters() {
   const [characters, setCharacters] = useState([]);
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     const fetchCharacters = async () => {
       try {
-        const response = await getCharacters();
+        const response = await getCharacters(page);
         setIsLoaded(true);
+        // console.log(response);
         setCharacters(response.data.results);
       } catch (error) {
         setIsLoaded(true);
@@ -21,7 +23,7 @@ export default function useFetchCharacters() {
       }
     };
     fetchCharacters();
-  }, []);
+  }, [page]);
 
-  return { characters, error, isLoaded };
+  return { characters, page, setPage, error, isLoaded };
 }

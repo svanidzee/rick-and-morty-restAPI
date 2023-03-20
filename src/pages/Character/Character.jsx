@@ -8,6 +8,7 @@ import { useFetchCharacter } from '../../hooks/index';
 
 export default function Character() {
   let { id } = useParams();
+
   const { character, error, isLoaded } = useFetchCharacter(id);
 
   return (

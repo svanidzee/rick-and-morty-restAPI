@@ -4,14 +4,14 @@ import styled from '@emotion/styled';
 import { Header, Footer } from './index';
 import { widths, unit } from '../../styles';
 
-const Layout = ({ fullWidth, children, grid }) => {
+const Layout = ({ fullWidth, children, grid, nextPage, prevPage, page }) => {
   return (
     <>
       <Header />
       <PageContainer fullWidth={fullWidth} grid={grid}>
         {children}
       </PageContainer>
-      <Footer />
+      <Footer nextPage={nextPage} prevPage={prevPage} page={page} />
     </>
   );
 };
