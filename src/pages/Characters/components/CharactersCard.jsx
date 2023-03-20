@@ -1,9 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import styled from '@emotion/styled';
-import { colors, mq } from '../../styles';
+import { Link } from 'react-router-dom';
 
-const Card = ({ character }) => {
+import { colors, mq } from '../../../styles';
+
+const CharacterCard = ({ character }) => {
   const { id, image, name } = character;
 
   return (
@@ -20,7 +21,7 @@ const Card = ({ character }) => {
   );
 };
 
-export default Card;
+export default CharacterCard;
 
 const CardContainer = styled(Link)({
   textDecoration: 'none',
