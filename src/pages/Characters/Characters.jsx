@@ -13,6 +13,7 @@ export default function Characters() {
   const handlePrevPage = () => {
     setPage(page - 1);
   };
+
   return (
     <Layout
       grid

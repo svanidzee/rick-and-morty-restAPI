@@ -2,7 +2,7 @@ import React from 'react';
 import { Global } from '@emotion/react';
 
 export const colors = {
-  background: '#ffffff',
+  background: '#f1f3f5',
   text: '#333333',
 };
 

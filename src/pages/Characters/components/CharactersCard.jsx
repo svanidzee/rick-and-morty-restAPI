@@ -42,7 +42,7 @@ const CardContainer = styled(Link)({
   [mq[2]]: {
     width: '31%',
   },
-  height: 380,
+  height: 300,
   margin: 10,
   overflow: 'hidden',
   position: 'relative',
