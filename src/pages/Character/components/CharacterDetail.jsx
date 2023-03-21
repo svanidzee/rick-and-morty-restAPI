@@ -1,22 +1,11 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { Link } from 'react-router-dom';
+
+import { ContentSection } from './';
 import { colors } from '../../../styles';
-import ContentSection from './ContentSection';
 
 const CharacterDetail = ({ character }) => {
-  const {
-    created,
-    // episode,
-    gender,
-    id,
-    image,
-    // location,
-    name,
-    // origin,
-    species,
-    status,
-  } = character;
+  const { gender, image, name, species, status } = character;
 
   return (
     <ContentSection>
@@ -27,9 +16,8 @@ const CharacterDetail = ({ character }) => {
         </DetailRow>
         <DetailRow>
           <DetailItem>
-            <h4>Character info:</h4>
+            <h5>{species}</h5>
             <h5>{gender}</h5>
-            <h5>{created}</h5>
             <h5>{status}</h5>
           </DetailItem>
         </DetailRow>
@@ -50,28 +38,33 @@ const CoverImage = styled.img({
 const CharacterDetails = styled.div({
   display: 'flex',
   flexDirection: 'column',
+  justifyContent: 'center',
   alignItems: 'center',
   padding: 20,
   borderRadius: 4,
   marginBottom: 30,
   border: `solid 1px ${colors.text}`,
   backgroundColor: colors.background,
+
   h1: {
     width: '100%',
     textAlign: 'center',
     marginBottom: 5,
+    fontSize: '1.5em',
+    textTransform: 'capitalize',
   },
-  h4: {
+  h5: {
     fontSize: '1.2em',
     marginBottom: 5,
     color: colors.text,
+    textTransform: 'capitalize',
   },
 });
 
 const DetailRow = styled.div({
   display: 'flex',
   flexDirection: 'row',
-  justifyContent: 'space-between',
+  justifyContent: 'center',
   alignItems: 'center',
   width: '100%',
   paddingBottom: 20,

@@ -1,17 +1,16 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-import { Header, Footer } from './index';
-import { widths, unit } from '../../styles';
+import { Header } from './';
+import { widths, unit } from '../styles';
 
-const Layout = ({ fullWidth, children, grid, nextPage, prevPage, page }) => {
+const Layout = ({ fullWidth, children, grid }) => {
   return (
     <>
       <Header />
       <PageContainer fullWidth={fullWidth} grid={grid}>
         {children}
       </PageContainer>
-      <Footer nextPage={nextPage} prevPage={prevPage} page={page} />
     </>
   );
 };

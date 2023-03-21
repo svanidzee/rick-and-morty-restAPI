@@ -1,10 +1,9 @@
 import React from 'react';
-import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
-import { Layout, QueryResult } from '../../components/Layout';
-import CharacterDetail from './components/CharacterDetail';
-import { useFetchCharacter } from '../../hooks/index';
+import { Layout, QueryResult } from '../../components';
+import { CharacterDetail } from './components';
+import { useFetchCharacter } from '../../hooks';
 
 export default function Character() {
   let { id } = useParams();

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-export default function Footer({ page, nextPage, prevPage }) {
+const Pagination = ({ nextPage, prevPage, page }) => {
   return (
     <div>
       {page > 1 && (
@@ -10,7 +10,9 @@ export default function Footer({ page, nextPage, prevPage }) {
       <PaginationButton onClick={nextPage}>Next Page</PaginationButton>
     </div>
   );
-}
+};
+
+export default Pagination;
 
 const PaginationButton = styled.button((props) => ({
   borderRadius: '5px',

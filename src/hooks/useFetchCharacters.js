@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useApi } from './index';
-import axios from 'axios';
+import { useApi } from './';
 
 export default function useFetchCharacters() {
   const { getCharacters } = useApi();
@@ -15,7 +14,6 @@ export default function useFetchCharacters() {
       try {
         const response = await getCharacters(page);
         setIsLoaded(true);
-        // console.log(response);
         setCharacters(response.data.results);
       } catch (error) {
         setIsLoaded(true);
@@ -23,7 +21,7 @@ export default function useFetchCharacters() {
       }
     };
     fetchCharacters();
-  }, [page]);
+  }, [page, getCharacters]);
 
   return { characters, page, setPage, error, isLoaded };
 }

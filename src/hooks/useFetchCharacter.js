@@ -20,7 +20,7 @@ export default function useFetchCharacter(id) {
       }
     };
     fetchCharacter();
-  }, [id]);
+  }, [id, getCharacter]);
 
   return { character, error, isLoaded };
 }

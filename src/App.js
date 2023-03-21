@@ -1,12 +1,13 @@
 import React, { Suspense, lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import { ErrorBoundary } from './components/Layout';
-import { Characters } from './pages/index';
+import { ErrorBoundary } from './components';
+import { Characters } from './pages';
 
 const Character = lazy(() =>
   import(/* webpackChunkName: "Character" */ './pages/Character/Character'),
 );
+
 function App() {
   return (
     <ErrorBoundary>
